@@ -25,6 +25,9 @@ docs/*.md ──build.py──► docs/_build/html/*.html
 | Build | `python docs/build.py` |
 | Preview | `python -m http.server 8000 --directory docs/_build/html` |
 | Test | `python -m unittest discover -s tests` |
+| Screenshot | `bash tools/screenshot/screenshot.sh docs/_build/screenshots docs/_build/html/index.html` |
+
+- Screenshots need a one-time `bash tools/screenshot/setup.sh` (Node.js 18+, network, about 300 MB).
 
 ## Set the name
 

@@ -1,6 +1,6 @@
 # Documentation rules
 
-- Rebuild after every docs change (`python docs/build.py`); the build must pass its link and anchor checks.
+- Rebuild after every docs change (`python docs/build.py`); the build must pass its link and anchor checks. To see pages as a browser shows them, use `tools/screenshot/screenshot.sh` as `.claude/skills/page-screenshots/SKILL.md` describes.
 
 - Short, structured pages: one topic per page, with a heading every screen or so. Split a page before it passes about 400 lines (at about 80 columns); a long subject becomes a group of pages with an overview page.
 

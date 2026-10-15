@@ -28,6 +28,20 @@ Run the builder tests with `python -m unittest discover -s tests`.
 The built site's "Getting started" page (`docs/index.md`) covers pages, links, math, diagrams and styling.
 `AGENTS.md` holds the writing rules for people and coding agents.
 
+## Check pages in a browser
+
+`tools/screenshot/` screenshots built pages in headless Chromium (Playwright), on Linux or macOS.
+It needs Node.js 18+ (on a Mac, `brew install node`); the first install downloads about 300 MB into `.browser/`.
+
+```bash
+bash tools/screenshot/setup.sh
+bash tools/screenshot/screenshot.sh docs/_build/screenshots docs/_build/html/index.html
+```
+
+- `page.html#heading` shoots one screen at that heading; `--width 390` before the pages shoots a phone.
+- Each page prints `ok`, its JavaScript errors, or `OVERFLOW` if it scrolls sideways.
+- `.claude/skills/page-screenshots/` teaches Claude Code to do this after docs changes; copy it with `tools/screenshot/`.
+
 ## Layout
 
 | Path | Role |
@@ -39,3 +53,5 @@ The built site's "Getting started" page (`docs/index.md`) covers pages, links, m
 | `docs/assets/` | CSS, JS, sample SVG, KaTeX 0.16.47 (MIT), Inter font (OFL 1.1) |
 | `docs/samples/` | One page per element: text, math, code, diagram |
 | `tests/test_docs.py` | Builder tests |
+| `tools/screenshot/` | Browser screenshots of built pages |
+| `.claude/skills/page-screenshots/` | Claude Code skill for the screenshots |
