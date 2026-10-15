@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 120" role="img" aria-labelledby="flow-title">
+  <title id="flow-title">Input, transform, output</title>
+  <defs>
+    <marker id="flow-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+      <path d="M1 1 L6 4 L1 7" fill="none" stroke="var(--muted)"/>
+    </marker>
+  </defs>
+  <g fill="var(--panel)" stroke="var(--line)">
+    <rect x="10" y="30" width="160" height="60" rx="10"/>
+    <rect x="240" y="30" width="160" height="60" rx="10" fill="var(--tint)" stroke="var(--accent)"/>
+    <rect x="470" y="30" width="160" height="60" rx="10"/>
+  </g>
+  <g fill="none" stroke="var(--muted)" marker-end="url(#flow-arrow)">
+    <path d="M170 60 H230"/>
+    <path d="M400 60 H460"/>
+  </g>
+  <g fill="var(--text)" font-family="Inter, system-ui, sans-serif" font-size="18" text-anchor="middle">
+    <text x="90" y="66">Input</text>
+    <text x="320" y="66">Transform</text>
+    <text x="550" y="66">Output</text>
+  </g>
+</svg>

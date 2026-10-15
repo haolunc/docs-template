@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="${description}">
+  <title>${title} · ${site}</title>
+  <script>try { const t = localStorage.getItem('docs-theme'); if (t) document.documentElement.dataset.theme = t; } catch (_) {}</script>
+  <link rel="stylesheet" href="${assets}/katex/katex.min.css">
+  <link rel="stylesheet" href="${assets}/site.css">
+  <script defer src="${assets}/katex/katex.min.js"></script>
+  <script defer src="${assets}/site.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="${home}" aria-label="${site} documentation home">${site}<span class="brand-dot">.</span></a>
+      <span class="header-label">DOCUMENTATION</span>
+      <button class="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">◐</button>
+    </div>
+    <div class="navigation-row">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar">☰ <span>Menu</span></button>
+      <nav class="section-navigation" aria-label="Documentation sections">${topnav}</nav>
+    </div>
+  </header>
+  <button class="nav-shade" tabindex="-1" aria-label="Close navigation" hidden></button>
+  <div class="page-layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-label">${section}</div>
+      <nav aria-label="Pages in ${section}">${sidebar}</nav>
+    </aside>
+    <main id="content" tabindex="-1">
+      <div class="page-heading">
+        <div class="eyebrow">${section}</div>
+        <h1>${title}</h1>
+        <p class="description">${description}</p>
+      </div>
+      <article class="prose">${body}</article>
+      <nav class="page-neighbors" aria-label="Previous and next pages">${neighbors}</nav>
+      <footer>${site} documentation <span>·</span> ${tagline}</footer>
+    </main>
+    <aside class="table-of-contents"${toc_hidden}>
+      <div class="toc-label">On this page</div>
+      <nav aria-label="On this page">${toc}</nav>
+    </aside>
+  </div>
+</body>
+</html>
